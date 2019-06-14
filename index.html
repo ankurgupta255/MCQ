@@ -15,53 +15,53 @@
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	<script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/decoupled-document/ckeditor.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/decoupled-document/ckeditor.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/inline/ckeditor.js"></script>
 
     <div class="container">
-    	<div class="row">
+      <div class="row">
     <div class="col-sm-4">
-    	<div class="card" style="width: 100%; height: auto; margin-bottom: 10px; padding-bottom:21px ">
-    		<div class="card-title" style="color: blue"><strong>Question Entry Options</strong></div>
-    		<hr size="30">
-    		<div class="card-body">
-    			<form>
+      <div class="card" style="width: 100%; height: auto; margin-bottom: 10px; padding-bottom:21px ">
+        <div class="card-title" style="color: blue"><strong>Question Entry Options</strong></div>
+        <hr size="30">
+        <div class="card-body">
+          <form>
   <div class="form-group">
     <label for="selectsubject">SELECT SUBJECT</label>
     <select class="form-control form-control-sm" id="selectsubject">
-  	<option>Subject 1</option>
-  	<option>Subject 2</option>
-  	<option>Subject 3</option>
-  	<option>Subject 4</option>
-	</select>
+    <option>Subject 1</option>
+    <option>Subject 2</option>
+    <option>Subject 3</option>
+    <option>Subject 4</option>
+  </select>
 </div>
   <div class="form-group">
     <label for="selecttopic">SELECT TOPIC</label>
     <select class="form-control form-control-sm" id="selecttopic">
       <option>Topic 1</option>
-  	  <option>Topic 2</option>
-  	  <option>Topic 3</option>
-  	  <option>Topic 4</option>
+      <option>Topic 2</option>
+      <option>Topic 3</option>
+      <option>Topic 4</option>
     </select>
   </div>
   <div class="form-group">
     <label for="questiontype">QUESTION TYPE</label>
     <select class="form-control form-control-sm" id="questiontype">
       <option>Type 1</option>
-  	  <option>Type 2</option>
-  	  <option>Type 3</option>
-  	  <option>Type 4</option>
+      <option>Type 2</option>
+      <option>Type 3</option>
+      <option>Type 4</option>
     </select>
   </div>
   <div class="form-group">
     <label for="language">Language</label>
     <select class="form-control form-control-sm" id="language">
       <option>English</option>
-  	  <option>Type 2</option>
-  	  <option>Type 3</option>
-  	  <option>Type 4</option>
+      <option>Type 2</option>
+      <option>Type 3</option>
+      <option>Type 4</option>
     </select>
   </div>
   <div class="form-group">
@@ -78,101 +78,134 @@
     </div>
     <div class="col-sm-8">
       <div class="card">
-      	<div class="card-title" style="color: blue"><strong>Question Details</strong></div>
-      	<hr size="30">
-      	<div class="card-body">
-      		<label for="editor">Type your Question</label>
-      		<div id="toolbar-container"></div>
-		    <div id="editor" class="abc">
-		        <p>This is the initial editor content.</p>
-		    </div>
-		    <script>
-		        DecoupledEditor
-		            .create( document.querySelector( '#editor' ) )
-		            .then( editor => {
-		                const toolbarContainer = document.querySelector( '#toolbar-container' );
+        <div class="card-title" style="color: blue"><strong>Question Details</strong></div>
+        <hr size="30">
+        <div class="card-body">
+          <label for="editor">Type your Question</label>
+          <div id="toolbar-container"></div>
+        <div id="editor" class="abc">
+          <div class="card-body card">
+            Add the Question here...
+          </div>
+        </div>
+        <script>
+            DecoupledEditor
+                .create( document.querySelector( '#editor' ) )
+                .then( editor => {
+                    const toolbarContainer = document.querySelector( '#toolbar-container' );
 
-		                toolbarContainer.appendChild( editor.ui.view.toolbar.element );
-		            } )
-		            .catch( error => {
-		                console.error( error );
-		            } );
-		    </script>
-		    <!-- <div class="form-check"> -->
-		    	<div class="row" style="margin-top: 3px; margin-bottom: 3px">
-		    <div class="col-4" style="text-align: center;">
-		    	<!-- <div class="card"> -->
-		    		<div class="card-title" style="padding-bottom: 5px"><strong>CORRECT</strong></div>
-		    		<input type="radio" class="form-check-input" id="materialChecked2" name="materialExample2" checked>
-		    	
-		    <!-- </div> -->
-		</div>
-		    <div class="col-5">
-		    	<!-- <div class="card"> -->
-		    		<div class="card-title"><strong>QUESTION OPTION</strong></div>
-		    		<input class="form-control form-control-sm" type="text" placeholder="Enter Option">
-		    	
-		    <!-- </div> -->
-		</div>
-	</div>
-	<div class="row" style="margin-top: 3px; margin-bottom: 3px">
-		    <div class="col-4" style="text-align: center;">
-		    	<!-- <div class="card"> -->
-		    		<!-- <div class="card-title">Correct</div> -->
-		    		<input type="radio" class="form-check-input" id="materialChecked2" name="materialExample2" checked>
-		    	
-		    <!-- </div> -->
-		</div>
-		    <div class="col-5">
-		    	<!-- <div class="card"> -->
-		    		<!-- <div class="card-title">QUESTION OPTION</div> -->
-		    		<input class="form-control form-control-sm" type="text" placeholder="Enter Option">
-		    	
-		    <!-- </div> -->
-		</div>
-	</div>
-	<div class="row" style="margin-top: 3px; margin-bottom: 3px">
-		    <div class="col-4" style="text-align: center; flex-wrap: flex">
-		    	<!-- <div class="card"> -->
-		    		<!-- <div class="card-title">Correct</div> -->
-		    		<input type="radio" class="form-check-input" id="materialChecked2" name="materialExample2" checked>
-		    	
-		    <!-- </div> -->
-		</div>
-		    <div class="col-5">
-		    	<!-- <div class="card"> -->
-		    		<!-- <div class="card-title">QUESTION OPTION</div> -->
-		    		<input class="form-control form-control-sm" type="text" placeholder="Enter Option">
-		    	
-		    <!-- </div> -->
-		</div>
-	</div>
-	<div class="row" style="margin-top: 3px; margin-bottom: 3px">
-		    <div class="col-4" style="text-align: center;">
-		    	<!-- <div class="card"> -->
-		    		<!-- <div class="card-title">Correct</div> -->
-		    		<input type="radio" class="form-check-input" id="materialChecked2" name="materialExample2" checked>
-		    	
-		    <!-- </div> -->
-		</div>
-		    <div class="col-5">
-		    		<input class="form-control form-control-sm" type="text" placeholder="Enter Option">
-		    	
-		    </div>
-	</div>
+                    toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+                } )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
+        <!-- <div class="form-check"> -->
+          <div class="row" style="margin-top: 3px; margin-bottom: 3px">
+        <div class="col-3" style="text-align: center;">
+          <!-- <div class="card"> -->
+            <div class="card-title"><strong>CORRECT</strong></div>
+    </div>
+        <div class="col-6">
+          <!-- <div class="card"> -->
+            <div class="card-title"><strong>OPTION</strong></div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 3px; margin-bottom: 3px">
+        <div class="col-3" style="text-align: center; vertical-align: middle">
+          <!-- <div class="card"> -->
+            <!-- <div class="card-title">Correct</div> -->
+            <input type="radio" class="form-check-input" checked>
+    </div>
+        <div class="col-6">
+          <div id="editor3">
+        <p>Option A</p>
+    </div>
+    <script>
+        InlineEditor
+            .create( document.querySelector( '#editor3' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 3px; margin-bottom: 3px">
+        <div class="col-3" style="text-align: center; flex-wrap: flex">
+          <!-- <div class="card"> -->
+            <!-- <div class="card-title">Correct</div> -->
+            <input type="radio" class="form-check-input" id="materialChecked2" name="materialExample2" checked>
+          
+        <!-- </div> -->
+    </div>
+        <div class="col-6">
+          <div id="editor4">
+        <p>Option B</p>
+    </div>
+    <script>
+        InlineEditor
+            .create( document.querySelector( '#editor4' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 3px; margin-bottom: 3px">
+        <div class="col-3" style="text-align: center;">
+            <input type="radio" class="form-check-input" id="materialChecked2" name="materialExample2" checked>
+    </div>
+        <div class="col-6">
+            <div id="editor5">
+        <p>Option C</p>
+    </div>
+    <script>
+        InlineEditor
+            .create( document.querySelector( '#editor5' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+        </div>
+  </div>
+  <div class="row" style="margin-top: 3px; margin-bottom: 3px">
+        <div class="col-3" style="text-align: center;">
+            <input type="radio" class="form-check-input" id="materialChecked2" name="materialExample2" checked>
+    </div>
+        <div class="col-6">
+            <div id="editor6">
+        <p>Option D</p>
+    </div>
+    <script>
+        InlineEditor
+            .create( document.querySelector( '#editor6' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+        </div>
+  </div>
+
   <div id="accordion">
   <div class="card"  style="margin-bottom: 5px; margin-top: 5px">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           Add Explanation
         </button>
       </h5>
     </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="card-body">
-        <input class="form-control form-control-sm" type="text" placeholder="Add Explanations...">
-      </div>
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="editor1">
+        <p>This is some sample content.</p>
+    </div>
+    <script>
+        InlineEditor
+            .create( document.querySelector( '#editor1' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
     </div>
   </div>
   <div class="card">
@@ -184,16 +217,24 @@
       </h5>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="card-body">
-        <input class="form-control form-control-sm" type="text" placeholder="Enter the advanced options...">
-      </div>
+      <div id="editor2">
+        <p>This is some sample content.</p>
+    </div>
+    <script>
+        InlineEditor
+            .create( document.querySelector( '#editor2' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
     </div>
   </div>
+
 </div>
 <button type="button" onClick="window.location.reload();" class="btn btn-primary" style="float: right; margin-top: 5px">Save & New</button>
 <a href="#"><button type="button" class="btn btn-primary" style="float: right;margin-right: 5px; margin-top: 5px">Save</button></a>
-			</div>
-      	</div>
+      </div>
+        </div>
       </div>
     </div>
   </div>
